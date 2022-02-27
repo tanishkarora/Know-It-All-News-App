@@ -17,14 +17,15 @@ export class News extends Component {
     pageSize: PropTypes.number
   }
   
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     console.log("news component ka constructor hu main");
     this.state = {
       articles: [],
       loading: false,
       page: 1
     }
+    document.title = this.props.category.charAt(0).toUpperCase() + this.props.category.slice(1) + " News";
   }
 
   async updateNews(){
